@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ceshi</title>
+  <script type="text/javascript" src="scripts_fuyong/fuyong.js"></script>
+</head>
+<body class='black'>
+  <script type="text/javascript">
+	var xhr = getHTTPObject();
+	xhr.onreadystatechange = function  () {
+		if(xhr.readyState == 4){
+			if((xhr.status >= 200 && xhr.status<300) || xhr.status == 304){
+				console.log(xhr.responseText +' '+xhr.readyState);
+			}else{
+				alert('   '+xhr.status+' '+xhr.readyState);
+			}
+		}
+	};
+	xhr.open('get','http://study.163.com/webDev/couresByCategory.htm',true);
+	xhr.send("pageNo="+1+"&psize="+2+"&type="+3 );
+
+
+
+  </script>
+  <style type="text/css">
+	.black{
+		background-color: #999;
+	}
+  	.login{
+  		
+  		
+  	}
+  	.login-width{
+  		height:290px;
+  		width:390px;
+  		background-color: white;
+  		margin:0 auto;
+  	}
+  	.login legend{
+
+  		padding-top: 30px;
+  		font-size: 18px;
+  	}
+	.login input[placeholder]{
+		font-size: 16px;
+	}
+	.login input,button{
+		box-sizing: border-box;
+		width: 295px;
+		height: 45px;
+
+	}
+	.login input{
+		box-shadow: inset 2px 2px rgb(241,241,241);
+	}
+	
+	.login input + input{
+		margin-top: 15px;
+	}
+	.login form{
+		padding-left: 38px;
+	}
+	.login button{
+		text-decoration: none;
+		font-size: 16px;
+		background-color: rgb(32,169,66);
+		box-shadow: outset 2px 2px rgb(241,241,241);
+	}
+	.login #login-close{
+		float: right;
+		margin-top: 10px;
+		margin-right: 8px;
+		font-size: 10px;
+		font-family: '微软雅黑';
+		font-style: normal;
+		cursor: pointer;
+	}
+
+  </style>
+	<div class="login">
+		<div class="login-width">
+		<i id='login-close'>x</i>
+				<form id="login-form">
+					<legend>登录网易云课堂</legend>
+					<p><input id="account" type="text" placeholder="账号" required></p>
+					<p><input id="pwd" type="password" placeholder="密码" required></p>
+					<p><button id="login-btn" >登录</button></p>
+				</form>
+		</div>
+	</div>
+</body>
+</html>

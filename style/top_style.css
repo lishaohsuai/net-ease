@@ -1,0 +1,174 @@
+
+/*整体的样式*/
+*{
+	margin:0;
+	padding:0;
+}
+/*整体的阴影*/
+.black{
+	background-color: #999;
+}
+/*top-top的样式*/
+.cookie{
+	width:100%;
+	
+}
+.cookie-width{
+	width:1206px;
+	height:37px;
+	background-color: rgb(243,243,243);
+	display: block;
+	margin: 0 auto;
+	font-family: 微软雅黑;
+	font-size: 12px; 
+	line-height: 37px;
+	color:#333;
+}
+.cookie-width a{
+	color:#21a557;
+	text-decoration: none;
+}
+.cookie-width span{
+	float: right;
+	cursor: pointer;
+}
+
+
+/*<!-- ******************************************************************顶部*****************************************************************************************************************************************************************-->*/
+	
+.header-top{
+	height:88px;
+	width:100%;
+	background-color: rgb(255,255,255);
+	/*position: relative;*/
+	top:0; 
+	display:block;
+}
+.header-top-width{
+	width:1206px;
+	margin:0 auto;
+}
+
+.header-records{
+	/*outline: 1px yellow solid ;*/
+	margin-top: 34px;
+	display:inline-block;
+	vertical-align: top;
+}
+.header-records .shuxian{
+	display: inline-block;
+	color:rgb(57,160,48);
+}
+.header-records span{
+	margin-left:59px;
+	font-size: 20px;
+	display: inline-block;
+	border-radius: 5px;
+}
+.header-records img{
+	margin-top: -20px;
+	position: absolute;
+	
+	clip:rect(20px ,60px,40px,0px);
+	/*上裁剪 画布大小 左裁剪*/
+}
+
+.header-attention{
+	/*outline: 1px yellow solid ;*/
+	margin-top: 34px;
+	display:inline-block;
+	width:109px;
+	height: 21px;
+	vertical-align: center;/*文本居中*/
+	cursor: pointer;
+}
+.header-attention .attention{
+	
+	font-size: 12px;
+	color: white;
+	display: inline-block;
+	background-color: rgb(33,165,87);
+	border-radius: 3px;
+	/*padding:4px 9px 4px 9px;*/
+	width:54px;
+	height: 21px;
+	/*vertical-align: middle;*/
+	line-height: 21px;
+	text-align: center;
+}
+.header-attention .attention:hover{
+	background-color: rgb(47,181,86);
+}
+.fensi{
+	font-size: 12px;
+	display: inline-block;
+	/*margin-left: 14px;*/
+}
+
+.header-links{
+	/*outline: 1px yellow solid ;*/
+	margin-top: 34px;
+	margin-left:450px;
+	display:inline-block;
+	vertical-align: top;
+}
+.header-links a{
+	/*outline: 1px yellow solid ;*/
+	text-decoration: none;
+	font-size: 15px;
+	color:black;
+	
+}
+.header-links a+a{
+	margin-left: 54px;
+}
+.header-links a:hover{
+	color: green;
+	font-size: 15px;
+}
+.header-links img{
+	margin-top: -20px;
+	margin-left: 380px;
+	position: absolute;
+	
+	clip:rect(0px ,42px,20px,24px);
+	/*上裁剪 画布大小 左裁剪*/
+}
+
+/*更改关注后的样式*/
+.attentioned-all{
+	display: none;
+	width:160px;
+	height: 21px;
+	
+	
+	margin-top: 34px;
+}
+.attentioned-all .attentioned{
+	
+	width:106px;
+	height: 21px;
+	border:1px gray solid;
+	border-radius: 3px;
+	background-color: rgb(248,248,248);
+	margin-top: 34px;
+	font-size: 12px;
+	padding-top: 4px;
+	padding-bottom: 5px;
+	padding-left: 7px;
+	padding-right: 8px;
+}
+.attentioned-all a{
+	font-style: 12px;
+	text-decoration: none;
+	display: inline-block;
+	color: rgb(204,204,204);
+}
+.attentioned-all .attentioned-shu{
+	font-style: 12px;
+	color: rgb(204,204,204);
+}
+.attentioned-all a:hover{
+	text-decoration: underline;
+	color: rgb(33,165,87);
+}

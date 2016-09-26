@@ -1,0 +1,75 @@
+
+/*内容区域的设置*/
+.right{
+	float: right;
+	/*background-color: white;*/
+
+}
+.introduce{
+	/*outline: 2px red solid;*/
+	display:block;
+	
+	
+	height:55px;
+	
+	color:black;
+	font-size: 16px;
+	background-color: white;
+	
+	line-height: 55px;
+	margin-top: 0px;
+	border:1px rgb(221,221,221) solid;
+}
+
+.video{
+	margin-top: -50px;
+	outline: 2px red solid;
+	/*padding-top: 20px;*/
+	display: block;
+	width: 220px;
+	height: 230px;
+	background-color: white;
+}
+.video span{
+	padding-left: 23px;	
+}
+.to-watch{
+	padding-top: 20px;
+	color:#666666;
+	font-size: 14px;
+}
+.top-video{
+	padding-top: 20px;
+}
+.video img{
+	outline: 2px red solid;
+	padding-left: 23px;
+	margin-top:9px;
+	cursor: pointer;
+}
+
+.ranking{
+	outline: 2px red solid;
+	height:55px;
+	width: 220px;
+	display:block;
+	float: right;
+	color: black;
+	margin-top: 20px; 
+	background-color: white;
+	/*margin-left: */
+}
+.ranking span{
+	color: black;
+	
+	display: block;
+	font-size: 16px;
+	line-height: 55px;
+	padding-left: 23px;	
+
+}
+.ranking-main{
+	width: 224px;
+	height: 720px;
+	background-color: white;
+}

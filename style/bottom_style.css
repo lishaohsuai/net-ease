@@ -1,0 +1,127 @@
+/*<!-- *************************************************************底部************************************-->*/
+
+
+
+body{
+	margin:0 0;
+	padding: 0;
+}
+.footer-bottom a{
+	text-decoration: none;
+	color:rgb(190,191,192);
+}
+.footer-bottom a:hover{
+	text-decoration: underline;
+}
+
+
+.footer-bottom{
+	height:262px;
+	width:100%;
+	background-color: rgb(44,51,57);
+	/*position: relative;*/
+	position:absolute;
+	margin-top: 0px;
+}
+.footer-bottom-width{
+	width:1206px;
+	margin:0 auto;
+	
+}
+
+
+.records{
+	/*outline: 1px yellow solid ;*/
+	margin-top: 90px;
+	margin-left:50px;
+	width:592px;
+	display:inline-block;
+	vertical-align: top;
+}
+.records span{
+	margin-left:59px;
+
+	color:rgb(57,160,48);
+
+	font-size: 21px;
+}
+.records p{
+	font-size: 12px;
+	color:rgb(190,191,192);
+	
+	line-height: 14px;
+}
+.records img{
+	margin-top: -20px;
+	position: absolute;
+	
+	clip:rect(20px ,60px,40px,0px);
+	/*上裁剪 画布大小 左裁剪*/
+}
+
+
+
+
+.links{
+	/*outline: 1px yellow solid ;*/
+	display:inline-block;
+	margin-top: 80px;
+	margin-left:0;
+	color:rgb(190,191,192);
+	
+	width:210px;
+}
+.links span{
+	font-size: 12px;
+	
+}
+.linke a{
+	line-height: 13px;
+	font-size: 15px;
+}
+
+
+
+.me{
+	/*outline: 1px yellow solid ;*/
+	margin-top: 80px;
+	display:inline-block;
+	
+	margin-left: 0;
+	color:rgb(190,191,192);
+	
+	width:133px;
+}
+.me span{
+	font-size: 12px;
+}
+.me a{
+	line-height: 15px;
+	font-size: 14px;
+}
+.me img{
+	position: absolute;
+	clip:rect(0px ,20px,17px,0px);
+}
+
+
+
+
+.more{
+	/*outline: 1px yellow solid ;*/
+	margin-top: 80px;
+	vertical-align: top;
+	display:inline-block;
+	
+	margin-left: 0px;
+	color:rgb(190,191,192);
+	
+	width:100px;
+}
+.more span{
+	font-size: 12px;
+}
+.more a{
+	font-size: 14px;
+	
+}

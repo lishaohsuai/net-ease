@@ -1,0 +1,59 @@
+		.three-model-width
+		{
+			width:100%;
+			height:297px;
+		}
+		.three-model{
+			width:1206px;
+			height:297px;
+			padding-top: 60px; 
+			margin:0 auto;
+		}
+		.three-model a{
+			color:green;
+		}
+		.three-model section{
+			display: inline-block; 
+			width: 240px; 
+			margin-left: 90px;
+		}
+		.three-model p+p{
+			margin-top: 20px;
+		}
+		.three-model p{
+			font-size: 14px; 
+			line-height: 24px;
+			color:gray;
+		}
+
+
+		.model h2{
+			font-size: 20px; 
+			margin-top: 0px; 
+		}
+
+		.model{
+			display: inline-block; 
+			vertical-align: top; 
+			text-align: left;
+		}
+		.second img{	
+			margin-top: 8px;
+			position: absolute;
+			margin-left:-90px;
+			clip:rect(0px ,162px,80px,82px);
+		}
+		.third img{
+			margin-top: 8px;
+			position: absolute;
+			margin-left:-170px;
+			clip:rect(0px ,244px,80px,164px);
+		}
+		.first img{	
+			margin-top: 8px;
+			position: absolute;
+			clip:rect(0px ,80px,80px,0px);
+		}
+		.model + .model{
+			margin-left: 85px;
+		}
