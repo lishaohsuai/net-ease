@@ -127,7 +127,8 @@
 	font-size: 15px;
 }
 .header-links img:hover{
-	clip:rect(0px ,63px,43px,45px);
+	position: absolute;
+	clip:rect(0px ,63px,20px,45px);
 }
 .header-links img{
 	margin-top: -20px;
