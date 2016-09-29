@@ -1,5 +1,6 @@
 
 /*内容区域的设置*/
+
 .right{
 	float: right;
 	/*background-color: white;*/
@@ -69,7 +70,7 @@
 
 }
 .ranking-main{
-	width: 224px;
+	width: 220px;
 	height: 720px;
 	background-color: white;
 }

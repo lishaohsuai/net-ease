@@ -31,7 +31,7 @@
 	<div class="header-top">
 		<div class="header-top-width">
 			<div class="header-records">
-				<img alt="EDU" src=".\images\小图标.png"  ><span>
+				<img alt="EDU" src=".\images\small.png"  ><span>
 				<div class="shuxian">|</div>网易教育产品部</span>
 			</div>
 
@@ -49,7 +49,7 @@
 				<a href="http://open.163.com/" >网易公开课</a>
 				<a href="http://study.163.com/" >云课堂</a>
 				<a href="http://www.icourse163.org/" >中国大学MOOC</a>
-				<img src=".\images\小图标.png">
+				<img src=".\images\small.png">
 			</div>
 		</div>
 	</div>
@@ -95,7 +95,7 @@
 		<div class = 'three-model'>
 			<div class="three-model-float">
 				<div class = 'first model'>
-					<img src=".\images\小图标2.png"  alt=""></img>
+					<img src=".\images\small2.png"  alt=""></img>
 					<section>
 						<h2>网易公开课</h2>
 						<p class="sub-font">推出国内外名校公开课, 涉及广泛的学科, 名校老师认真讲解深度剖析, 网易视频公开课频道搭建起强有力的网络视频教学平台。</p>
@@ -104,7 +104,7 @@
 				</div>
 
 				<div class = 'second model'>
-					<img src=".\images\小图标2.png"  alt=""></img>
+					<img src=".\images\small2.png"  alt=""></img>
 					<section>
 						<h2>云课堂</h2>
 						<p class="sub-font">网易旗下大型在线教育学习平台, 该平台面向学习者提供海量免费, 优质课程, 创新的个性化学习体验, 自由开放的交流互动环境. </p>
@@ -113,7 +113,7 @@
 				</div>
 
 				<div class = 'third model'>
-					<img src=".\images\小图标2.png"  alt=""></img>
+					<img src=".\images\small2.png"  alt=""></img>
 					<section>
 						<h2>中国大学MOOC</h2>
 						<p class="sub-font">是爱课程网携手云课堂打造的在线学习平台, 每一个有提升愿望的人, 都可以在这里学习中国最好的大学课程, 学完还能获得认证证书. </p>
@@ -154,12 +154,12 @@
 		}
 		.content{
 			width:100%;
-			height: 1000px;
+			height: 1468px;
 		}
 		.content-width{
 			outline: 2px red solid;
 			width:1206px;
-			height: 1000px;
+			height: 1468px;
 			margin: 0 auto;
 
 			margin-top: 81px;
@@ -315,12 +315,109 @@
 			</div>
 		</div>
 	</div>
+	<!-- 最热排行 -->
+<style type="text/css">
+	.viewHot{
+		display: block;
+		height:72px;
+		width: 220px;
+	}
+	.viewHot img{
+		width: 50px;
+		height:50px;
+		line-height: 72px;
+		padding-top: 11px;
+		padding-bottom: 11px;
+		padding-left: 20px;
+		display: inline-block;
+	}
+	.viewHot .viewHotRight 	
+	{
+		display: inline-block;
+		width: 150px;
+		height:50px;
+		vertical-align: top;
+		margin-top: 11px;
+	}
+	.viewHot .viewHotRight h2
+	{
+		display: inline-block;
+		font-size: 14px;
+		color: #5a5a5a;
+		width: 122px;
+		/*height: 14px;*/
+		text-overflow:ellipsis;
+		overflow: hidden;
+		white-space:nowrap;
+		vertical-align: top;
+		margin-top: 11px;
+		margin-left: 12px;
+	}
+	.viewHot p{
+		/*display: inline-block;*/
+		font-size: 10px;
+		color:rgb(152,158,165);
+		margin-left: 12px;
+		margin-top: 12px;
+		height:10px; 
+		width:60px;
+		margin-left: 20px;
+		background-image: url(./imgaes/small.png);
+		background-position: 0px 0px;
+	}
+</style>
+<script type="text/javascript">
+function ranking_m (argument) {
+	
+	var super_sen = {};//接受数据
+	var view_div = {};//显示数据
+	var view_img = {};
+	var view_divC = {};
+	var view_title = {};
+	var view_p = {};
+	function callback (argument) {
+		var i;
+		ranking = document.getElementsByClassName('ranking-main')[0];
+		super_sen = JSON.parse(argument);
+		for(i = 0;i<20;i++)
+		{
+			view_div[i] = document.createElement('div');//创建DIV
+			view_img[i] = document.createElement('img');
+			view_img[i].setAttribute('src', super_sen[i].smallPhotoUrl);
 
+			view_divC[i] = document.createElement('div');//创建DIV
+
+
+			view_title[i] = document.createElement('h2');
+			view_title[i].innerHTML = super_sen[i].name;
+			view_p[i] = document.createElement('p');
+			view_p[i].innerHTML = super_sen[i].learnerCount;
+
+			view_divC[i].appendChild(view_title[i]);
+			view_divC[i].appendChild(view_p[i]);
+			view_div[i].appendChild(view_img[i]);
+			view_div[i].appendChild(view_divC[i]);
+
+			view_div[i].className= 'viewHot';
+			view_divC[i].className = 'viewHotRight';
+			ranking.appendChild(view_div[i]);
+		}
+
+		// body = document.getElementById('pic');
+		
+ 		 //body.setAttribute( 'src',super_sen[0].smallPhotoUrl);
+		// console.log(super_sen[0].smallPhotoUrl);
+	}
+	get('http://study.163.com/webDev/hotcouresByCategory.htm',null,callback);//获得数据
+}
+addLoadEvent(ranking_m);
+
+</script>
 
 	<footer class="footer-bottom">
 		<div class="footer-bottom-width">
 			<div class="records">
-				<img alt="EDU" src=".\images\小图标.png"  >
+				<img alt="EDU" src=".\images\small.png"  >
 				<span>|网易教育产品部</span>
 				<p>©2014icourse163.org 浙ICP备08114786号-1</p>
 				<p>icourse163.cn 京ICP备12020869号-2 京公安网备110102000459-2</p>
@@ -337,7 +434,7 @@
 				<span>我们：</span>
 				<p><a href="http://open.163.com/" target="_blank">关于</a></p>
 				<p><a href="http://open.163.com/" target="_blank">联系</a></p>
-				<p><a href="http://open.163.com/" target="_blank">关注</a><img src=".\images\小图标.png"></p>
+				<p><a href="http://open.163.com/" target="_blank">关注</a><img src=".\images\small.png"></p>
 			</div>
 
 			<div class="more">

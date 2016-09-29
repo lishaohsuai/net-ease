@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="scripts_fuyong/fuyong.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+	var options = {pageNo:1,psize:20,type:10};
+	var super_sen = {};
+	function callback (argument) {
+		body = document.getElementById('pic');
+		super_sen = JSON.parse(argument);
+		console.log(super_sen);
+		body.setAttribute( 'src',super_sen[0].smallPhotoUrl);
+		console.log(super_sen[0].smallPhotoUrl);
+	}
+	get('http://study.163.com/webDev/hotcouresByCategory.htm',null,callback); 
+</script>
+<style type="text/css">
+	#pic{
+		height: 67px;
+		width: 118px;
+	}
+</style>
+<img id='pic'> </img>
+</body>	
+</html>
