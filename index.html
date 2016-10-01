@@ -323,6 +323,7 @@
 		display: block;
 		height:72px;
 		width: 220px;
+		cursor: pointer;
 	}
 	.viewHot img{
 		width: 50px;
@@ -431,11 +432,10 @@ function ranking_m (argument) {
 				}
 				if( parseInt(ranking.style.marginTop) < (-720)){
 					ranking.style.marginTop = 0;
+					clearInterval(time2);
+					 i = 0;
 				}
 			}
-			
-			 // console.log( parseInt(ranking.style.marginTop))
-			// var time = setTimeout(mov, 500);
 		}
 	}
 addLoadEvent(ranking_m);
