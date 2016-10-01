@@ -76,3 +76,166 @@
 	overflow: hidden;
 	white-space:nowrap;
 }
+
+
+/*热门榜单的css*/
+.viewHot{
+	display: block;
+	height:72px;
+	width: 220px;
+	cursor: pointer;
+}
+.viewHot img{
+	width: 50px;
+	height:50px;
+	line-height: 72px;
+	padding-top: 11px;
+	padding-bottom: 11px;
+	padding-left: 20px;
+	display: inline-block;
+}
+.viewHot .viewHotRight 	
+{
+	display: inline-block;
+	width: 150px;
+	height:50px;
+	vertical-align: top;
+	margin-top: 11px;
+}
+.viewHot .viewHotRight h2
+{
+	display: inline-block;
+	font-size: 14px;
+	color: #5a5a5a;
+	width: 122px;
+	/*height: 14px;*/
+	text-overflow:ellipsis;
+	overflow: hidden;
+	white-space:nowrap;
+	vertical-align: top;
+	margin-left: 12px;
+}
+.viewHot p{
+	/*display: inline-block;*/
+	font-size: 12px;
+	color:rgb(152,158,165);
+	margin-left: 12px;
+	margin-top: 12px;
+	height:12px; 
+	width:60px;
+	padding-left: 16px;
+	background-image: url(./images/small.png);
+	background-position: -90px 0px;
+	background-repeat: no-repeat;
+
+}
+
+/*内容区域*/
+body{
+	background-color: rgb(248,248,248);
+}
+.content{
+	width:100%;
+	height: 1468px;
+}
+.content-width{
+	outline: 2px red solid;
+	width:1206px;
+	height: 1468px;
+	margin: 0 auto;
+
+	margin-top: 81px;
+	font-size:0;
+	/*height: 50px;*/
+}
+.content a{
+	text-decoration:none;
+	color:black;
+	font-size: 18px;
+}	
+/*同级别的类用逗号分隔*/
+.content .product,.programme{
+	outline: 2px red solid;
+	margin-left: 0px;
+	width:200px;
+	height: 50px;
+	display: inline-block;
+	line-height: 50px;
+	text-align: center;
+	background-color: rgb(255,255,255);
+}
+.content .content-choose{
+	
+	
+	
+}
+.content .content-choosed {
+	background-color: rgb(57,160,48);
+}
+.content .content-choosed a{
+	color:white;
+}
+.content .content-details{
+	width:979px;
+	height: 1222px;
+	margin-top: 30px;
+	float: left;
+	outline: blue 1px solid;
+	margin-top: 30px;
+}
+.content .blocks{
+	width: 225px;
+	height: 225px;
+	display: inline-block;
+	background-color: white;
+	margin-right: 19px;
+	margin-top: 18px;
+	box-shadow: 2px 2px 2px lightgray;
+}
+.content-details img{
+	width: 225px;
+	height: 123px;
+}
+
+.content-details ul{
+	display: block; 
+	height: 80px;
+	width: 215px;
+	margin-top: 10px;
+	margin-left: 5px;
+}
+.content-details .bigfir{
+	display: block; 
+	font-size: 12px;
+	width: 214px;
+	font-weight: bold;
+	overflow:hidden ;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.content-details .bigsec{
+	display: block; 
+	font-size: 12px;
+	color:gray;
+	margin-top: 10px;
+}
+.content-details .bigthi{
+	display: inline-block; 
+	font-size: 12px;
+	color:gray;
+	margin-top: 10px;
+	border:1px solid gray;
+	border-radius: 3px;
+	padding-left: 19px;
+	padding-right: 3px;
+	background-image: url(./images/small.png);
+	background-position: -88px 0px;
+	background-repeat: no-repeat;
+}
+.content-details .bigfor{
+	display: block; 
+	font-size: 12px;
+	color:red;
+	font-weight: bold;
+	margin-top: 10px;
+}		
