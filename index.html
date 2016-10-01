@@ -308,7 +308,9 @@
 				<div class="ranking">
 					<span>最热排行</span>
 					<div  class="ranking-main">
+						<div class='move-ranking'>
 
+						</div>
 					</div>
 				</div>
 				
@@ -350,20 +352,21 @@
 		overflow: hidden;
 		white-space:nowrap;
 		vertical-align: top;
-		margin-top: 11px;
 		margin-left: 12px;
 	}
 	.viewHot p{
 		/*display: inline-block;*/
-		font-size: 10px;
+		font-size: 12px;
 		color:rgb(152,158,165);
 		margin-left: 12px;
 		margin-top: 12px;
-		height:10px; 
+		height:12px; 
 		width:60px;
-		margin-left: 20px;
+		padding-left: 16px;
 		background-image: url(./images/small.png);
-		background-position: 0px 0px;
+		background-position: -90px 0px;
+		background-repeat: no-repeat;
+
 	}
 </style>
 <script type="text/javascript">
@@ -378,9 +381,9 @@ function ranking_m (argument) {
 	var view_p = {};
 	var i;
 	function callback (argument) {		
-		ranking = document.getElementsByClassName('ranking-main')[0];
+		ranking = document.getElementsByClassName('move-ranking')[0];
 		super_sen = JSON.parse(argument);
-		console.log(super_sen);
+		// console.log(super_sen);
 		for(i = 0;i<20;i++)
 		{
 			view_div[i] = document.createElement('div');//创建DIV
@@ -394,7 +397,7 @@ function ranking_m (argument) {
 			view_title[i] = document.createElement('h2');
 			view_title[i].innerHTML = super_sen[i].name;
 			view_p[i] = document.createElement('p');
-			view_p[i].innerHTML = super_sen[i].learnerCount;
+			view_p[i].innerHTML =super_sen[i].learnerCount;
 
 			view_divC[i].appendChild(view_title[i]);
 			view_divC[i].appendChild(view_p[i]);
@@ -408,21 +411,36 @@ function ranking_m (argument) {
 		}
 	}
 	get('https://study.163.com/webDev/hotcouresByCategory.htm',null,callback);//获得数据
-	console.log(super_sen);
+	// console.log(super_sen);
+
 	
-	var picc = document.getElementsByClassName('picture');
-	for(i = 0;i<20;i++){
-		picc[i].style.backgroundImage = 'url("../imgaes/small.png")'; 
+}
+	function mov_ranking(){
+		var time1 = setInterval(mov, 5000);
+		var ranking = document.getElementsByClassName("move-ranking")[0];
+		ranking.style.marginTop = 0;
+		function mov (argument) {
+			var time2 = setInterval(mov_small,100);
+			var i = 0;
+			function mov_small (argument) {
+				i++;
+				ranking.style.marginTop = parseInt(ranking.style.marginTop) - 9 +'px';
+				if(i > 7){
+					 clearInterval(time2);
+					 i = 0;
+				}
+				if( parseInt(ranking.style.marginTop) < (-1440)){
+					ranking.style.marginTop = 0;
+				}
+			}
+			
+			 // console.log( parseInt(ranking.style.marginTop))
+			// var time = setTimeout(mov, 500);
+		}
 	}
-}
 addLoadEvent(ranking_m);
-function pic() {
-	// var picc = document.getElementsByClassName('picture');
-	// for(i = 0;i<20;i++){
-	// 	picc[i].style['background-image'] =  url('../imgaes/small.png'); 
-	// }
-}
-addLoadEvent(pic);
+addLoadEvent(mov_ranking);
+
 
 </script>
 

@@ -73,4 +73,6 @@
 	width: 220px;
 	height: 720px;
 	background-color: white;
+	overflow: hidden;
+	white-space:nowrap;
 }
