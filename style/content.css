@@ -124,7 +124,7 @@
 	height:12px; 
 	width:60px;
 	padding-left: 16px;
-	background-image: url(./images/small.png);
+	background-image: url(../images/small.png);
 	background-position: -90px 0px;
 	background-repeat: no-repeat;
 
@@ -228,7 +228,7 @@ body{
 	border-radius: 3px;
 	padding-left: 19px;
 	padding-right: 3px;
-	background-image: url(./images/small.png);
+	background-image: url(../images/small.png);
 	background-position: -88px 0px;
 	background-repeat: no-repeat;
 }
