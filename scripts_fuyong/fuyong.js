@@ -190,3 +190,5 @@ function get(url,options,callback) {
     xhr.send(null);//get方法必须传入null
     //如果是post请求则为send(serialize(formdata));
 }
+
+

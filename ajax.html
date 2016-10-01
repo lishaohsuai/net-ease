@@ -7,27 +7,28 @@
 </head>
 <body>
 <script type="text/javascript">
-	// var options = {pageNo:1,psize:20,type:10};
-	// var super_sen = {};
-	// function callback (argument) {
-	// 	body = document.getElementById('pic');
-	// 	super_sen = JSON.parse(argument);
-	// 	console.log(super_sen);
-	// 	body.setAttribute( 'src',super_sen[0].smallPhotoUrl);
-	// 	console.log(super_sen[0].smallPhotoUrl);
-	// }
-	// get('http://study.163.com/webDev/hotcouresByCategory.htm',null,callback); 
+	var options = {pageNo:1,psize:20,type:10};
+	var super_sen = {};
+	function callback (argument) {
+		body = document.getElementById('pic');
+		super_sen = JSON.parse(argument);
+		console.log(super_sen);
+		console.log(super_sen.list[1].bigPhotoUrl);
+		body.src = super_sen.list[1].bigPhotoUrl;
+
+	}
+	get('http://study.163.com/webDev/couresByCategory.htm',options,callback); 
 </script>
 <style type="text/css">
 	#pic{
 		display: block;
-		height: 10px;
-		width: 10px;
-		background-image: url(./images/small.png);
+		height: 400px;
+		width: 400px;
+		/*background-image: url(./images/small.png);
 		background-position: -90px 0px;
-		 background-repeat: no-repeat;
+		 background-repeat: no-repeat;*/
 	}
 </style>
-<i id='pic'> </i>
+<img id='pic'> </img>
 </body>	
 </html>
