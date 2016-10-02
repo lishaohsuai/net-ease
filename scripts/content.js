@@ -93,6 +93,7 @@ function viewBig (argument) {
 			
 
 			view_big_details[i] = document.createElement('ul');//创建DIV
+
 			view_big_li[i]=new Array();
 			for(j = 0; j < 4;j++)
 			{
@@ -113,21 +114,223 @@ function viewBig (argument) {
 				}
 				view_big_li[i][3].className = 'bigfor';
 			}
+			
 
 			//设置图片内容
+			view_big_img[i].className = 'bigImg';
 			view_big_img[i].setAttribute('src', super_sen.list[i].bigPhotoUrl);
-			//设定文字内容
-			
+			view_big_img[i].onmouseover = function  (argument) {
+			}
 
+			
+			
 			view_big_div[i].className = 'blocks';
 
-			
+
 			view_big_div[i].appendChild(view_big_img[i]);
 			view_big_div[i].appendChild(view_big_details[i]);
 			con.appendChild(view_big_div[i]);
+
+			
 		}
+		//对ul添加时事件 标题颜色  加阴影
+			//mouseOver();
+		// 生成翻页器
+			var pagesNum = super_sen.totalPage;
+			var pages = {};//页码
+			var changePages = document.createElement('div');
+			var pagesUp = document.createElement('span');
+			pagesUp.innerHTML = '<';
+			changePages.appendChild(pagesUp);
+			for(i = 0;i<pagesNum;i++){
+				pages[i] = document.createElement('span');
+				pages[i].innerHTML = ''+(i+1);
+				// pages[i].setAttribute('class', 'showPages');
+				// pages[i].className = 'showPages';
+				changePages.appendChild(pages[i]);
+			}
+			for(i = 0;i<8;i++){
+				pages[i].className = 'showPages';
+			}
+			for(i= 8;i<pagesNum;i++){
+				pages[i].className = 'hidePages';
+			}
+			var pagesDown = document.createElement('span');
+			pagesDown.innerHTML = '>';
+			pagesDown.className = 'pagesDown';
+			pagesUp.className = 'pagesUp';
+			changePages.className = 'changePages';
+			changePages.appendChild(pagesDown);
+			con.appendChild(changePages);
+
+			total = super_sen.pagination.totlePageCount;//总共的页码
+
+			
+				var i;
+				var changeSpan = document.getElementsByClassName('showPages');
+				for(i = 0;i<8;i++){
+					changeSpan[i].addEventListener('click', cPage);//每个按键绑定事件
+				}
+
+				var spanUp = document.getElementsByClassName('pagesUp')[0];
+				var spanDown = document.getElementsByClassName('pagesDown')[0];
+				spanUp.style.backgroundColor = 'lightgray';
+				pages[0].style.backgroundColor = '#9dd8b1';
+				spanUp.addEventListener('click', upDownEvent);//每个按键绑定事件
+				spanDown.addEventListener('click', upDownEvent);//每个按键绑定事件
+				for(i = 0;i<20;i++){
+					view_big_div[i].addEventListener('mouseover',mouseOver);
+					view_big_div[i].addEventListener('mouseout',mouseOut);
+				}
+				
 
 	}
 	get('http://study.163.com/webDev/couresByCategory.htm',options,callback);
 }
 addLoadEvent(viewBig);	
+
+//对翻页器绑定事件
+var typ = 10;//是产品设计还是编程语言  默认产品设计
+var pageN = 1;//页数  默认是 1
+var total = 5;//总共的页码
+//全局变量
+
+//addLoadEvent(listen_span);	//绑定事件
+function cPage () {
+var show = document.getElementsByClassName('showPages');
+var is = isNaN(parseInt(this.innerHTML));
+if(is == true){
+	if(this.innerHTML = '>' ){
+		pageN = parseInt(show[0].innerHTML);
+		for(i =0 ;i<8;i++){
+		show[i].style.backgroundColor = 'transparent';
+		}
+		show[0].style.backgroundColor = '#9dd8b1';//当前选中变色
+	}
+	else if(this.innerHTML ='<'){
+		pageN = parseInt(show[0].innerHTML);
+		for(i =0 ;i<8;i++){
+		show[i].style.backgroundColor = 'transparent';
+		}
+		show[0].style.backgroundColor = '#9dd8b1';//当前选中变色
+	}
+	else{
+		pageN = 1;
+	}
+	
+}else{
+	pageN = parseInt(this.innerHTML);
+	// //变色
+	for(i =0 ;i<8;i++){
+		show[i].style.backgroundColor = 'transparent';
+	}
+	this.style.backgroundColor = '#9dd8b1';//当前选中变色
+}
+
+
+
+var options = {pageNo:pageN,psize:20,type:typ};
+function callback (argument) {
+
+	var supers = JSON.parse(argument);
+	// console.log(super_sen);
+	var con = document.getElementsByClassName('content-details')[0];
+
+	var bigfir = document.getElementsByClassName('bigfir');//所有的模块的信息更新
+	var bigsec = document.getElementsByClassName('bigsec');
+	var bigthi = document.getElementsByClassName('bigthi');
+	var bigfor = document.getElementsByClassName('bigfor');
+	var imgtwn = document.getElementsByClassName('bigImg');
+
+	//内容更新
+	for(i = 0;i<20;i++)
+	{
+		imgtwn[i].setAttribute('src', supers.list[i].bigPhotoUrl);
+
+		bigfir[i].innerHTML = supers.list[i].name;
+		bigsec[i].innerHTML = supers.list[i].provider;
+		bigthi[i].innerHTML = supers.list[i].learnerCount;
+		bigfor[i].innerHTML = '￥'+supers.list[i].price.toFixed(2);
+		if(supers.list[i].price == 0){
+			bigfor[i].innerHTML = '免费';
+		}	
+	}
+
+
+}
+get('http://study.163.com/webDev/couresByCategory.htm',options,callback);
+}
+
+//对两个tab 绑定事件
+function tabEvent (argument) {
+	var tabs = document.getElementsByClassName('tab');
+	for(i=0;i<2;i++){
+		tabs[i].addEventListener('click', cTabs);
+	}
+	function cTabs (argument) {
+
+		if(this.innerHTML == '产品设计'){
+			typ = 10;
+			this.className = '';
+			this.className = 'product content-choosed tab';
+			tabs[1].className = 'programme content-unchoosed tab'
+		}
+		else{
+			typ = 20;
+			this.className = '';
+			this.className = 'programme content-choosed tab';
+			tabs[0].className = 'product content-unchoosed tab'
+		}
+		pageN = 1;
+		 cPage();
+	}
+}
+addLoadEvent(tabEvent);
+
+//对两个上下翻页的按键绑定事件
+function upDownEvent () {
+	var i;
+	var show = document.getElementsByClassName('showPages');
+	var spanUp = document.getElementsByClassName('pagesUp')[0];
+	var spanDown = document.getElementsByClassName('pagesDown')[0];
+	if(this.className =='pagesUp')
+	{
+		
+		if(show[0].innerHTML == '1'){
+			this.style.backgroundColor = 'lightgray';
+			return;
+		}
+		else{
+			this.style.backgroundColor = '#9dd8b1';
+			for(i = 0;i<8;i++){
+				show[i].innerHTML = parseInt(show[i].innerHTML)-8+'';
+			}
+			cPage();
+			spanDown.style.backgroundColor = '#9dd8b1';
+		}
+	}
+	else{//向下翻页的情况
+		 if(parseInt(show[7].innerHTML) > total ){
+			this.style.backgroundColor = 'lightgray';
+			return;
+		}
+		else{
+			this.style.backgroundColor = '#9dd8b1';
+			for(i = 0;i<8;i++){
+				show[i].innerHTML = parseInt(show[i].innerHTML)+8+'';
+			}
+			cPage();
+			spanUp.style.backgroundColor = '#9dd8b1';
+		}
+	}
+}
+function mouseOver (argument) {
+	this.style.boxShadow = '2px 2px 2px rgb(150,150,150)';
+	this.firstChild.nextSibling.firstChild.style.color = '#39a030';
+
+}
+function mouseOut (argument) {
+	this.style.boxShadow = '2px 2px 2px rgb(230,230,230)';
+	this.firstChild.nextSibling.firstChild.style.color = 'black';
+}
+

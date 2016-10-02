@@ -190,5 +190,15 @@ function get(url,options,callback) {
     xhr.send(null);//get方法必须传入null
     //如果是post请求则为send(serialize(formdata));
 }
+function addClass(element,value) {
+  if (!element.className) {
+    element.className = value;//没有的话直接添加
+  } else {
+    newClassName = element.className;//有的话追加
+    newClassName+= " ";
+    newClassName+= value;
+    element.className = newClassName;
+  }
+}
 
 
