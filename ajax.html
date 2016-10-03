@@ -8,11 +8,11 @@
 <body>
 
 <style type="text/css">
-	#pic{
+	.bigblock{
 		display: block;
 		height: 400px;
 		width: 400px;
-		background-color: black;
+		/*background-color: black;*/
 		/*background-image: url(./images/small.png);
 		background-position: -90px 0px;
 		 background-repeat: no-repeat;*/
@@ -20,20 +20,12 @@
 </style>
 <img id='pic'> </img>
 <script type="text/javascript">
-	// var options = {pageNo:1,psize:20,type:10};
-	// var super_sen = {};
-	// function callback (argument) {
-		var sbody = document.getElementById('pic');
-		sbody.onmouseover = function  () {
-			this.className = 'red';
-		}
-	// 	super_sen = JSON.parse(argument);
-	// 	console.log(super_sen);
-	// 	console.log(super_sen.list[1].bigPhotoUrl);
-	// 	body.src = super_sen.list[1].bigPhotoUrl;
-
-	// }
-	// get('http://study.163.com/webDev/couresByCategory.htm',options,callback); 
+var float = {};//新建对象	
+float = document.createElement('div');
+float.innerHTML = "<div class='bigblock'><img></img><ul><li>dafd </li>\
+<li>afdsa </li><li> dsafd sa</li><li>fdafdsa </li></ul><div><p></p></div></div>";
+body = document.getElementsByTagName('body')[0];
+body.appendChild(float);
 </script>
 </body>	
 </html>

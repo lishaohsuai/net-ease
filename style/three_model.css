@@ -11,6 +11,10 @@
 		}
 		.three-model a{
 			color:green;
+			text-decoration: none;
+		}
+		.three-model a:hover{
+			text-decoration: underline;
 		}
 		.three-model section{
 			display: inline-block; 

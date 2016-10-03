@@ -4,6 +4,10 @@
 	margin:0;
 	padding:0;
 }
+body{
+	/*font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;*/
+}
+
 /*整体的阴影*/
 .black{
 	background-color: #999;
@@ -11,12 +15,12 @@
 /*top-top的样式*/
 .cookie{
 	width:100%;
-	
+	background-color: rgb(243,243,243);
 }
 .cookie-width{
 	width:1206px;
 	height:37px;
-	background-color: rgb(243,243,243);
+	
 	display: block;
 	margin: 0 auto;
 	font-family: 微软雅黑;
@@ -111,20 +115,21 @@
 	margin-left:450px;
 	display:inline-block;
 	vertical-align: top;
+
 }
 .header-links a{
 	/*outline: 1px yellow solid ;*/
 	text-decoration: none;
-	font-size: 15px;
+	font-size: 16px;
 	color:black;
-	
+	font-weight:bold; 
 }
 .header-links a+a{
 	margin-left: 54px;
 }
 .header-links a:hover{
 	color: green;
-	font-size: 15px;
+	
 }
 .header-links img:hover{
 	position: absolute;
