@@ -365,7 +365,7 @@ function everymodule (obj) {
 		float[i].firstChild.nextSibling.firstChild.innerHTML = obj.list[i].name;//标题
 		float[i].firstChild.nextSibling.firstChild.className = 'fir';
 		float[i].firstChild.nextSibling.firstChild.nextSibling.innerHTML = obj.list[i].learnerCount + '人在学';//obj.list[i].learnerCount
-		console.log(obj.list[i].learnerCount ) ;
+		// console.log(obj.list[i].learnerCount ) ;
 		float[i].firstChild.nextSibling.firstChild.nextSibling.className = 'sec';
 		float[i].firstChild.nextSibling.firstChild.nextSibling.nextSibling.innerHTML = '发布者:'+ obj.list[i].provider;
 		float[i].firstChild.nextSibling.firstChild.nextSibling.nextSibling.className = 'thi';

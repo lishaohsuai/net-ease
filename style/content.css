@@ -32,6 +32,9 @@
 	background-color: white;
 	box-shadow: 1px 1px 2px rgb(211,211,211);
 }
+.video:hover{
+	box-shadow: 2px 2px 2px rgb(150,150,150);
+}
 .video span{
 	padding-left: 23px;	
 }
@@ -79,7 +82,9 @@
 	border-top: 1px solid lightgray;
 	box-shadow: 1px 1px 2px rgb(211,211,211);
 }
-
+.ranking-main:hover{
+	box-shadow: 2px 2px 2px rgb(150,150,150);
+}
 
 /*热门榜单的css*/
 .viewHot{

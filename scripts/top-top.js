@@ -6,7 +6,7 @@ function get_cookies() {
 	
 	var div_cookie = document.getElementsByClassName('cookie');
 	var receive = getCookie("name");
-	console.log(receive);
+	// console.log(receive);
 	if(receive =='1'){//如果存在cookie 不显示 今天 也不显示
 
 		div_cookie[0].style.display = "none" ;
