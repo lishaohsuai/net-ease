@@ -188,7 +188,7 @@ function viewBig (argument) {
 				}
 
 	}
-	get('http://study.163.com/webDev/couresByCategory.htm',options,callback);
+	get('https://study.163.com/webDev/couresByCategory.htm',options,callback);
 }
 addLoadEvent(viewBig);	
 
@@ -261,7 +261,7 @@ function cPage () {
 		everymodule (supers) ;
 
 	}
-	get('http://study.163.com/webDev/couresByCategory.htm',options,callback);
+	get('https://study.163.com/webDev/couresByCategory.htm',options,callback);
 }
 
 //对两个tab 绑定事件
