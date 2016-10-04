@@ -61,20 +61,39 @@ function submitForm (argument) {
 			var time = new Date();
 			time.setDate(time.getDate() + 1);
 			setCookie("loginSuc","1",time,null,null,null);
+			
 			//成功后隐藏登录窗口
 			var logbox = document.getElementsByClassName('login')[0];
 			logbox.style.display = 'none';
 			// var receive = getCookie("loginSuc");
 			// console.log(receive);//成功
 			 alert('登录成功');
+			 //更新样式  关注
+			 var attentions = document.getElementsByClassName('header-attention')[0];
+	
+ 				attentions.style.display = 'none';
+ 				var attentioned = document.getElementsByClassName('attentioned-all');
+ 				attentioned[0].style.display = 'inline-block';
+ 			//更新关注的  cookie
+ 			attentionC();
 		}else{
 			alert('登录失败');
 		}
 	}
 	get('https://study.163.com/webDev/login.htm',op,callback);
+
 }
 
-
+//设置关注成功
+function attentionC(){
+	function callback(){
+		var time = new Date();
+		time.setDate(time.getDate() + 1);
+		setCookie("followSuc","1",time,null,null,null);
+	}
+	get('https://study.163.com/webDev/attention.htm',null,callback);
+}
+ 			
 function set_cookies()
 {
 	var btn = document.getElementsByClassName('closex');
@@ -96,6 +115,7 @@ addLoadEvent(set_cookies);
 //更改关注的js
 function change_attention () {
 	var attention = document.getElementsByClassName('header-attention');
+
  	attention[0].addEventListener('click',iflog);
  	var attentioned = document.getElementsByClassName('cancel');
  	attentioned[0].addEventListener('click',
@@ -105,6 +125,11 @@ function change_attention () {
 	 	var attention = document.getElementsByClassName('header-attention');
 	 	attention[0].style.display = 'inline-block';
  });	
+ 	var loginClose = document.getElementsByClassName('login-close')[0];
+ 	loginClose.addEventListener('click',function(){
+ 		var logs = document.getElementsByClassName('login');
+ 		logs.style.display = 'none';
+ 	});
 }
 
  addLoadEvent(change_attention) ;
