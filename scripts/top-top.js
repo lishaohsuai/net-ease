@@ -68,7 +68,7 @@ function submitForm (argument) {
 			alert('登录失败');
 		}
 	}
-	get('https//study.163.com/webDev/login.htm',op,callback);
+	get('https://study.163.com/webDev/login.htm',op,callback);
 }
 
 
