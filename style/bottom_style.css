@@ -50,7 +50,7 @@ body{
 	font-size: 12px;
 	color:rgb(190,191,192);
 	
-	line-height: 14px;
+	margin-top: 15px;
 }
 .records img{
 	margin-top: -20px;
@@ -72,12 +72,15 @@ body{
 	
 	width:210px;
 }
+.links p{
+	margin-top: 15px;
+}
 .links span{
 	font-size: 12px;
 	
 }
 .linke a{
-	line-height: 13px;
+	/*line-height: 13px;*/
 	font-size: 15px;
 }
 
@@ -92,6 +95,9 @@ body{
 	color:rgb(190,191,192);
 	
 	width:133px;
+}
+.me p{
+	margin-top: 15px;
 }
 .me span{
 	font-size: 12px;
@@ -120,7 +126,11 @@ body{
 	width:100px;
 }
 .more span{
+
 	font-size: 12px;
+}
+.more p{
+	margin-top: 15px;
 }
 .more a{
 	font-size: 14px;
