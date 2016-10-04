@@ -125,7 +125,7 @@ function change_attention () {
 	 	var attention = document.getElementsByClassName('header-attention');
 	 	attention[0].style.display = 'inline-block';
  });	
- 	var loginClose = document.getElementsByClassName('login-close')[0];
+ 	var loginClose = document.getElementById('login-close');
  	loginClose.addEventListener('click',function(){
  		var logs = document.getElementsByClassName('login');
  		logs.style.display = 'none';
