@@ -127,7 +127,7 @@ function change_attention () {
  });	
  	var loginClose = document.getElementById('login-close');
  	loginClose.addEventListener('click',function(){
- 		var logs = document.getElementsByClassName('login');
+ 		var logs = document.getElementsByClassName('login')[0];
  		logs.style.display = 'none';
  	});
 }
