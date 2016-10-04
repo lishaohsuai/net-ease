@@ -51,10 +51,17 @@ function submitForm (argument) {
 		password: hex_md5(pwd.value)
 	};
 	function callback(index){
-		if(index == '1'){
+		if(index == 1){//登陆成功
 			var log = document.getElementsByClassName('login')[0];
 			log.style.display = 'none';
+			//设置coolie
+			var time = new Date();
+			time.setDate(time.getDate() + 1);
+			setCookie("loginSuc","1",time,null,null,null);
+			var receive = getCookie("loginSuc");
+			console.log(receive);
 		}
+		console.log('denglushibai');
 	}
 	get('http://study.163.com/webDev/login.htm',op,callback);
 }
