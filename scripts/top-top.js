@@ -27,12 +27,12 @@ function iflog () {
 		this.style.display = 'none';
  		var attentioned = document.getElementsByClassName('attentioned-all');
  		attentioned[0].style.display = 'inline-block';
- 		alert('存在');
+ 		// /alert('存在');
 	}
 	else{//不存在cookie
 		var logbox = document.getElementsByClassName('login')[0];
 		logbox.style.display = 'block';
-		alert('不存在');
+		// alert('不存在');
 	}
  	
 }
