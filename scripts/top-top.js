@@ -45,6 +45,7 @@ function btnSend (argument) {
 }
 addLoadEvent(btnSend);
 function submitForm (argument) {
+	alert('启动表单验证');
 	var account = document.getElementById('account');
 	var pwd = document.getElementById('pwd');
 	console.log('daf');
