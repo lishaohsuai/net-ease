@@ -9,7 +9,7 @@
 	z-index: 99;
 	right: 0;
 	left:0;
-	display: block;
+	display: none;
 }
 .login-width{
 	height:290px;
