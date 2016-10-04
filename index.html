@@ -9,10 +9,12 @@
 	<link rel="stylesheet" href="style/three_model.css" />
 	<link rel="stylesheet" href="style/content.css" />
 	<link rel="stylesheet" href="style/login.css" />
+		<script type="text/javascript" src="scripts/md5.js"></script>
 	<script type="text/javascript" src="scripts_fuyong/fuyong.js"></script>
 	<script type="text/javascript" src="scripts/carousel.js"></script>
 	<script type="text/javascript" src="scripts/top-top.js"></script>
 	<script type="text/javascript" src="scripts/content.js"></script>
+
 	
 
 </head>
@@ -63,7 +65,7 @@
 					<legend>登录网易云课堂</legend>
 					<p><input id="account" type="text" placeholder="账号" required></p>
 					<p><input id="pwd" type="password" placeholder="密码" required></p>
-					<p><button id="login-btn" >登录</button></p>
+					<p id="logbtn"><button id="login-btn" >登录</button></p>
 				</form>
 		</div>
 	</div>
@@ -162,7 +164,7 @@
 		var video = document.getElementById('video');
 		video.addEventListener('click', open_new);
 			function open_new () {
-				var video = document.getElementsByClassName('jump-video');
+				var video = document.getElementsByClassName('jump-video-width');
 				video[0].style.display = 'block';
 			}
 		}
@@ -171,8 +173,12 @@
 		var image_close = document.getElementById('images-close');
 		image_close.addEventListener('click', close_new);
 			function close_new () {
-				var video = document.getElementsByClassName('jump-video');
+				var video = document.getElementsByClassName('jump-video-width');
 				video[0].style.display = 'none';
+				var videoP = document.getElementsByTagName('video')[0];
+				if(!videoP.paused){
+					videoP.pause();
+				}
 			}
 		}
 </script>
@@ -181,9 +187,9 @@
 <!-- 视频弹窗 -->
 <style type="text/css">
 	.jump-video-width{
-		width: 100%;
-	}
-	.jump-video {
+/*		width: 100%;*/
+		/*height: 1000px;*/
+		/*background: rgba(0,0,0,0.7);*/
 		position: fixed;
 		top:0;
 		bottom: 0;
@@ -194,25 +200,49 @@
 		left:0;
 		display: none;
 	}
+	.jump-video {
+		position: fixed;
+
+		/*background: rgba(0,0,0,0.7);*/
+		/*width:1206px;*/
+		display: block;
+		width: 950px;
+		height: 680px;
+		background: white;
+		top:50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+
+	}
 	.jump-video video{
 		display: block;
-		margin: 0 auto;
+		
+		width:890px;
+		height: 564px;
+		margin: 40px 32px 20px;
+	/*	width: 950px;
+		height: 680px;*/
 
-		width: 1000px;
-		height: 700px;
+	}
+	.jump-video span{
+		position: absolute;
+		display: block; 
+				top:20px;
+		left:30px;
 	}
 	.for-close{
 		position: relative;
-		width: 1000px;
-		height: 700px;
+		/*width: 1000px;*/
+		/*height: 700px;*/
 		margin: 0 auto;
+		/*vertical-align: middle;*/
 	}
 	.img-close{
 		position: absolute;
 		display: block;
 		
-		top:50px;
-		right:-10px;
+		top:20px;
+		right:20px;
 		height: 28px;
 		width: 28px;
 		z-index: 999;
@@ -222,6 +252,7 @@
 </style>
 	<div class="jump-video-width">
 		<div class="jump-video">
+			<span>请观看下面的视频</span>
 			<div class="for-close">
 				<div id = 'images-close' class="img-close"></div>
 				<video id = 'videos' src="http://mov.bn.netease.com/open-movie/nos/mp4/2014/12/30/SADQ86F5S_shd.mp4" controls="controls" ></video>

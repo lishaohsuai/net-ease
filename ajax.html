@@ -18,14 +18,43 @@
 		 background-repeat: no-repeat;*/
 	}
 </style>
-<img id='pic'> </img>
+<!-- <img id='pic'> </img> -->
 <script type="text/javascript">
-var float = {};//新建对象	
-float = document.createElement('div');
-float.innerHTML = "<div class='bigblock'><img></img><ul><li>dafd </li>\
-<li>afdsa </li><li> dsafd sa</li><li>fdafdsa </li></ul><div><p></p></div></div>";
-body = document.getElementsByTagName('body')[0];
-body.appendChild(float);
+// var float = {};//新建对象	
+// float = document.createElement('div');
+// float.innerHTML = "<div class='bigblock'><img></img><ul><li>dafd </li>\
+// <li>afdsa </li><li> dsafd sa</li><li>fdafdsa </li></ul><div><p></p></div></div>";
+// body = document.getElementsByTagName('body')[0];
+// body.appendChild(float);
+var player = document.getElementById('py'),
+	btn = document.getElementById('vb'),
+	ct = document.getElementById('ct'),
+	duration = document.getElementById('duration');
+duration.innerHTML =player.duration;
+
+btn.addEventListener('click', function(ev){
+	if(player.paused){
+		player.play();
+		btn.value = 'Pause';
+	}else{
+		player.pause();
+		btn.value = 'Play';
+	}
+});
+setInterval(function(){
+	ct.innerHTML=player.currentTime;
+}, 250);
 </script>
+<div class="mp">
+	<div class="video">
+		<video id="py" src="http://mov.bn.netease.com/open-movie/nos/mp4/2014/12/30/SADQ86F5S_shd.mp4" width="300" height="200">
+			
+		</video>
+		<div class="con">
+			<input type="button" value="Play" id="vb">
+			<span id="ct">0</span>/<span id="duration">/</span>
+		</div>
+	</div>
+</div>
 </body>	
 </html>
