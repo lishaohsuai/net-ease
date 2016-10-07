@@ -217,8 +217,10 @@ body{
 	position: absolute;
 	display:none;
 	background-color: white;
-	margin-top: -237px;
+	margin-top: -220px;
 	margin-left: -10px;
+
+	/*margin-top: -10px;*/
 	z-index: 999;
 	box-shadow: 2px 2px 2px rgb(150,150,150);
 }
@@ -252,6 +254,7 @@ body{
 	padding-left: 20px;
 	padding-right: 30px;
 	padding-bottom: 25px;
+	min-height: 100px;
 }
 
 .content-details .bigblock .fir{
@@ -295,9 +298,11 @@ body{
 	display: block; 
 	height: 80px;
 	width: 215px;
-	margin-top: 10px;
+	padding-bottom: 10px!important;
+	margin-top: 5px;
 	margin-left: 5px;
-	margin-bottom: 10px;
+	box-sizing: border-box;
+	
 }
 
 .content-details .blocks .bigfir{
@@ -306,8 +311,12 @@ body{
 	width: 214px;
 	font-weight: bold;
 	overflow:hidden ;
+	line-height: 12px;
 	text-overflow:ellipsis;
 	white-space: nowrap;
+	margin-top: 0px;
+	vertical-align: top;
+	
 }
 /*.content-details .bigfir:hover{
 	color:#39a030;
@@ -317,6 +326,7 @@ body{
 	font-size: 12px;
 	color:gray;
 	margin-top: 10px;
+	
 }
 .content-details .blocks .bigthi{
 	display: inline-block; 
@@ -330,13 +340,17 @@ body{
 	background-image: url(../images/small.png);
 	background-position: -88px 0px;
 	background-repeat: no-repeat;
+	
 }
+
+
 .content-details .blocks .bigfor{
 	display: block; 
 	font-size: 12px;
 	color:red;
 	font-weight: bold;
-	margin-top: 10px;
+	margin-top: 8px;
+	margin-bottom: 10px!important;
 }
 /*分页器*/
 .changePages{
@@ -352,12 +366,21 @@ body{
 	display:inline-block;
 	font-size: 12px;
 	line-height: 20px;
-	width: 28px;
+	width: 18px;
 	text-align: center;
 	cursor: pointer;
 }
 .changePages .showPages:hover{
-	background-color: #9dd8b1;
+	background-color: rgb(157,216,177);
+	color: white!important;
+}
+.changePages .showWidth{
+	display:inline-block;
+	font-size: 12px;
+	line-height: 20px;
+	width: 30px;
+	text-align: center;
+	cursor: pointer;
 }
 .changePages .hidePages{
 	display:none;
@@ -366,7 +389,8 @@ body{
 	display:inline-block;
 	font-size: 12px;
 	line-height: 20px;
-	width: 28px;
+	width: 30px;
+	height: 20px;
 	text-align: center;
 	background-color: #9dd8b1;
 	cursor: pointer;

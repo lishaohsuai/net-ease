@@ -12,7 +12,32 @@ function ranking_m (argument) {
 	function callback (argument) {		
 		ranking = document.getElementsByClassName('move-ranking')[0];
 		super_sen = JSON.parse(argument);
-		 // console.log(super_sen);
+		  // console.log(super_sen);
+		for(i = 0;i<20;i++)
+		{
+			view_div[i] = document.createElement('div');//创建DIV
+			view_img[i] = document.createElement('img');
+			// console.log(super_sen[i]);
+			view_img[i].setAttribute('src', super_sen[i].smallPhotoUrl);
+
+			view_divC[i] = document.createElement('div');//创建DIV
+
+
+			view_title[i] = document.createElement('h2');
+			view_title[i].innerHTML = super_sen[i].name;
+			view_p[i] = document.createElement('p');
+			view_p[i].innerHTML =super_sen[i].learnerCount;
+
+			view_divC[i].appendChild(view_title[i]);
+			view_divC[i].appendChild(view_p[i]);
+			view_div[i].appendChild(view_img[i]);
+			view_div[i].appendChild(view_divC[i]);
+
+			view_p[i].className = 'picture';
+			view_div[i].className= 'viewHot';
+			view_divC[i].className = 'viewHotRight';
+			ranking.appendChild(view_div[i]);
+		}
 		for(i = 0;i<20;i++)
 		{
 			view_div[i] = document.createElement('div');//创建DIV
@@ -46,7 +71,7 @@ function ranking_m (argument) {
 }
 //移动榜单
 function mov_ranking(){
-		var time1 = setInterval(mov, 5000);
+		var time1 = setInterval(mov, 5000);//测试  原本5000
 		var ranking = document.getElementsByClassName("move-ranking")[0];
 		ranking.style.marginTop = 0;
 		function mov (argument) {
@@ -59,7 +84,7 @@ function mov_ranking(){
 					 clearInterval(time2);
 					 i = 0;
 				}
-				if( parseInt(ranking.style.marginTop) < (-720)){
+				if( parseInt(ranking.style.marginTop) <= (-1440)){
 					ranking.style.marginTop = 0;
 					clearInterval(time2);
 					 i = 0;
@@ -139,21 +164,27 @@ function viewBig (argument) {
 			var pagesNum = super_sen.totalPage;
 			var pages = {};//页码
 			var changePages = document.createElement('div');
+			var cPageWidth = {};//外壳
 			var pagesUp = document.createElement('span');
 			pagesUp.innerHTML = '<';
 			changePages.appendChild(pagesUp);
 			for(i = 0;i<pagesNum;i++){
+				cPageWidth[i] = document.createElement('div');
 				pages[i] = document.createElement('span');
 				pages[i].innerHTML = ''+(i+1);
 				// pages[i].setAttribute('class', 'showPages');
 				// pages[i].className = 'showPages';
-				changePages.appendChild(pages[i]);
+				cPageWidth[i].appendChild(pages[i]);
+				changePages.appendChild(cPageWidth[i]);
+
 			}
 			for(i = 0;i<8;i++){
 				pages[i].className = 'showPages';
+				cPageWidth[i].className = 'showWidth';
 			}
 			for(i= 8;i<pagesNum;i++){
 				pages[i].className = 'hidePages';
+				cPageWidth[i].className = 'hidePages';
 			}
 			var pagesDown = document.createElement('span');
 			pagesDown.innerHTML = '>';
@@ -175,7 +206,7 @@ function viewBig (argument) {
 				var spanUp = document.getElementsByClassName('pagesUp')[0];
 				var spanDown = document.getElementsByClassName('pagesDown')[0];
 				spanUp.style.backgroundColor = 'lightgray';
-				pages[0].style.backgroundColor = '#9dd8b1';
+				pages[0].style.color = '#9dd8b1';
 				spanUp.addEventListener('click', upDownEvent);//每个按键绑定事件
 				spanDown.addEventListener('click', upDownEvent);//每个按键绑定事件
 				//阴影 加上
@@ -206,16 +237,16 @@ function cPage () {
 		if(this.innerHTML = '>' ){
 			pageN = parseInt(show[0].innerHTML);
 			for(i =0 ;i<8;i++){
-			show[i].style.backgroundColor = 'transparent';
+			show[i].style.color = '#999999';
 			}
-			show[0].style.backgroundColor = '#9dd8b1';//当前选中变色
+			show[0].style.color = '#9dd8b1';//当前选中变色
 		}
 		else if(this.innerHTML ='<'){
 			pageN = parseInt(show[0].innerHTML);
 			for(i =0 ;i<8;i++){
-			show[i].style.backgroundColor = 'transparent';
+			show[i].style.color = '#999999';
 			}
-			show[0].style.backgroundColor = '#9dd8b1';//当前选中变色
+			show[0].style.color = '#9dd8b1';//当前选中变色
 		}
 		else{
 			pageN = 1;
@@ -225,9 +256,9 @@ function cPage () {
 		pageN = parseInt(this.innerHTML);
 		// //变色
 		for(i =0 ;i<8;i++){
-			show[i].style.backgroundColor = 'transparent';
+			show[i].style.color = '#999999';
 		}
-		this.style.backgroundColor = '#9dd8b1';//当前选中变色
+		this.style.color = '#9dd8b1';//当前选中变色
 	}
 
 
@@ -306,6 +337,7 @@ function upDownEvent () {
 		else{
 			this.style.backgroundColor = '#9dd8b1';
 			for(i = 0;i<8;i++){
+				show[i].parentNode.className = 'showWidth';
 				show[i].innerHTML = parseInt(show[i].innerHTML)-8+'';
 			}
 			cPage();
@@ -321,6 +353,10 @@ function upDownEvent () {
 			this.style.backgroundColor = '#9dd8b1';
 			for(i = 0;i<8;i++){
 				show[i].innerHTML = parseInt(show[i].innerHTML)+8+'';
+				if(parseInt(show[i].innerHTML) > total){
+					show[i].parentNode.className = 'hidePages';
+					this.style.backgroundColor = 'lightgray';
+				}
 			}
 			cPage();
 			spanUp.style.backgroundColor = '#9dd8b1';
