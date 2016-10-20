@@ -198,7 +198,7 @@ function viewBig (argument) {
 			
 				var i;
 				var changeSpan = document.getElementsByClassName('showPages');
-				for(i = 0;i<8;i++){
+				for(i = 0;i<total;i++){
 					changeSpan[i].addEventListener('click', cPage);//每个按键绑定事件
 				}
 
@@ -254,7 +254,7 @@ function cPage () {
 	}else{
 		pageN = parseInt(this.innerHTML);
 		// //变色
-		for(i =0 ;i<8;i++){
+		for(i =0 ;i<total;i++){
 			show[i].style.color = '#999999';
 		}
 		this.style.color = '#9dd8b1';//当前选中变色
