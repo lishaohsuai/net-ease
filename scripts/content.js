@@ -172,14 +172,13 @@ function viewBig (argument) {
 				cPageWidth[i] = document.createElement('div');
 				pages[i] = document.createElement('span');
 				pages[i].innerHTML = ''+(i+1);
-				// pages[i].setAttribute('class', 'showPages');
-				// pages[i].className = 'showPages';
 				cPageWidth[i].appendChild(pages[i]);
 				changePages.appendChild(cPageWidth[i]);
 
 			}
-			for(i = 0;i<8;i++){
-				pages[i].className = 'showPages';
+			
+			for(i = 0;i<pagesNum;i++){
+				pages[i].className ='showPages';
 				cPageWidth[i].className = 'showWidth';
 			}
 			for(i= 8;i<pagesNum;i++){
